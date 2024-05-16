@@ -73,5 +73,57 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Content of the Assignment:
 
+Here for the table data I have used the following Data structure 
+const TablePage = () => {
+  const columns = [
+    {
+      title: 'Category',
+      dataIndex: 'category',
+      key: 'category',
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Description',
+      dataIndex: 'description',
+      key: 'description',
+    },
+    {
+      title: 'Price',
+      dataIndex: 'price',
+      key: 'price',
+      render: (text) => `$${text}`, // Format price
+    },
+  ];
 
+  const products = [
+    {
+      category: 'Electronics',
+      name: 'Smartphone',
+      description: 'Latest model smartphone with all the newest features.',
+      price: 699,
+      key: '1',
+    },
+    {
+      category: 'Books',
+      name: 'React Programming',
+      description: 'A comprehensive guide to React programming.',
+      price: 39,
+      key: '2',
+    },
+    {
+      category: 'Clothing',
+      name: "Men's T-Shirt",
+      description: "Casual men's t-shirt made from comfortable cotton fabric.",
+      price: 29,
+      key: '3',
+    }
+  ];
+
+
+
+Categories used are the above three with the 
 
