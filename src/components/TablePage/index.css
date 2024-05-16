@@ -9,8 +9,12 @@
     background-color: red;
 }
 .add-button{
-    margin:5px;
+    margin:10px;
     border:2px solid black;
+    width:25%;
+    background-color:rgb(213, 210, 210);
+    
+
 }
 .table-container {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

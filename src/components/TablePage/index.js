@@ -2,12 +2,15 @@ import { useEffect, useState } from "react"
 import './index.css';
 import { Table, Button, Modal, Input } from 'antd';
 import { Link } from "react-router-dom"
+import { useArrayContext } from "../../Context";
 
 
-const TablePage = ({ products }) => {
+const TablePage = ({ searchCategory, searchDescription, searchName }) => {
 
     const [isEditing, setIsEditing] = useState(false)
     const [editingProduct, setEditingProduct] = useState(null)
+    const { products, setProducts } = useArrayContext();
+    const [fileteredProducts, setFileteredProducts] = useState()
 
     const columns = [{
         title: 'Category',
@@ -46,17 +49,9 @@ const TablePage = ({ products }) => {
         }
     },]
 
-
-    const [productData, setProductData] = useState();
-
-    useEffect(() => {
-      setProductData(products)
-    }, [products])
-    
-
     const onDeleteProduct = (record) => {
         console.log(record)
-        setProductData(pre => {
+        setProducts(pre => {
             return pre.filter(product => product.key !== record.key)
         })
     }
@@ -71,6 +66,21 @@ const TablePage = ({ products }) => {
         setEditingProduct(null)
     }
 
+    useEffect(() => {
+        let updatedProducts = products;
+        if (searchName.length > 0) {
+            updatedProducts = updatedProducts.filter(product => product.name.toLowerCase().includes(searchName));
+        }
+        if (searchDescription.length > 0) {
+            updatedProducts = updatedProducts.filter(product => product.description.includes(searchDescription));
+        }
+        if (searchCategory?.length > 0) {
+            updatedProducts = updatedProducts.filter(product => product.category === searchCategory);
+        }
+        setFileteredProducts(updatedProducts)
+    }, [searchDescription, searchName, searchCategory,products])
+
+
     return (
         <div className="table-page">
             <Link to="/addproduct">
@@ -79,7 +89,7 @@ const TablePage = ({ products }) => {
 
             <Table className="table-container"
                 columns={columns}
-                dataSource={productData}
+                dataSource={fileteredProducts}
             />
             <Modal
                 title="Product Editing"
@@ -90,7 +100,7 @@ const TablePage = ({ products }) => {
 
                 }}
                 onOk={() => {
-                    setProductData(pre => {
+                    setProducts(pre => {
                         return pre.map(product => {
                             if (product.key === editingProduct.key) {
                                 return editingProduct

@@ -5,96 +5,362 @@ const ArrayContext = createContext();
 
 // Create a provider component
 export const ArrayProvider = ({ children }) => {
-    const [array, setArray] = useState([
+    const [products, setProducts] = useState([
         {
-
+            key: '1',
             category: 'Electronics',
             name: 'Smartphone',
             description: 'Latest model smartphone with all the newest features.',
             price: 699,
-            key: '1',
-        },
-        {
-
+          },
+          {
+            key: '2',
             category: 'Books',
             name: 'React Programming',
             description: 'A comprehensive guide to React programming.',
             price: 39,
-            key: '2',
-        },
-        {
-
+          },
+          {
+            key: '3',
             category: 'Clothing',
             name: 'Men\'s T-Shirt',
             description: 'Casual men\'s t-shirt made from comfortable cotton fabric.',
             price: 29,
-            key: '3',
-        },
-        {
+          },
+          {
             key: '4',
             category: 'Electronics',
             name: 'Laptop',
             description: 'Powerful laptop with high-performance specifications.',
             price: 1299,
-        },
-        {
+          },
+          {
             key: '5',
             category: 'Books',
             name: 'JavaScript Basics',
             description: 'A beginner\'s guide to JavaScript programming.',
             price: 19,
-        },
-        {
+          },
+          {
             key: '6',
             category: 'Electronics',
             name: 'Smart Watch',
             description: 'Smart watch with fitness tracking and notifications.',
             price: 199,
-        },
-        {
+          },
+          {
             key: '7',
             category: 'Clothing',
             name: 'Women\'s Dress',
             description: 'Elegant women\'s dress suitable for any occasion.',
             price: 49,
-        },
-        {
+          },
+          {
             key: '8',
             category: 'Books',
             name: 'Python Programming',
             description: 'A complete guide to Python programming language.',
             price: 49,
-        },
-        {
+          },
+          {
             key: '9',
             category: 'Electronics',
             name: 'Tablet',
             description: 'Portable tablet with a high-resolution display.',
             price: 299,
-        },
-        {
+          },
+          {
             key: '10',
             category: 'Clothing',
             name: 'Men\'s Jeans',
             description: 'Classic men\'s jeans made from durable denim fabric.',
             price: 39,
-        },
+          },
+          {
+            key: '11',
+            category: 'Books',
+            name: 'Data Structures and Algorithms',
+            description: 'A comprehensive guide to data structures and algorithms.',
+            price: 59,
+          },
+          {
+            key: '12',
+            category: 'Electronics',
+            name: 'Headphones',
+            description: 'High-quality headphones with noise-canceling technology.',
+            price: 149,
+          },
+          {
+            key: '13',
+            category: 'Clothing',
+            name: 'Women\'s Blouse',
+            description: 'Stylish women\'s blouse made from soft and breathable fabric.',
+            price: 29,
+          },
+          {
+            key: '14',
+            category: 'Books',
+            name: 'HTML and CSS Basics',
+            description: 'A beginner\'s guide to HTML and CSS web development.',
+            price: 29,
+          },
+          {
+            key: '15',
+            category: 'Electronics',
+            name: 'Bluetooth Speaker',
+            description: 'Portable Bluetooth speaker with excellent sound quality.',
+            price: 79,
+          },
+          {
+            key: '16',
+            category: 'Clothing',
+            name: 'Men\'s Hoodie',
+            description: 'Warm and comfortable men\'s hoodie with a front pocket.',
+            price: 49,
+          },
+          {
+            key: '17',
+            category: 'Books',
+            name: 'React Native Development',
+            description: 'Learn to build mobile apps with React Native framework.',
+            price: 49,
+          },
+          {
+            key: '18',
+            category: 'Electronics',
+            name: 'Wireless Mouse',
+            description: 'Ergonomic wireless mouse with long battery life.',
+            price: 29,
+          },
+          {
+            key: '19',
+            category: 'Clothing',
+            name: 'Women\'s Skirt',
+            description: 'Fashionable women\'s skirt suitable for casual wear.',
+            price: 39,
+          },
+          {
+            key: '20',
+            category: 'Books',
+            name: 'JavaScript Frameworks',
+            description: 'Explore popular JavaScript frameworks like React, Angular, and Vue.',
+            price: 59,
+          },
+          {
+            key: '21',
+            category: 'Electronics',
+            name: 'Wireless Keyboard',
+            description: 'Slim and stylish wireless keyboard with multimedia keys.',
+            price: 49,
+          },
+          {
+            key: '22',
+            category: 'Clothing',
+            name: 'Men\'s Polo Shirt',
+            description: 'Classic men\'s polo shirt made from breathable cotton fabric.',
+            price: 19,
+          },
+          {
+            key: '23',
+            category: 'Books',
+            name: 'Node.js Development',
+            description: 'Learn to build server-side applications with Node.js.',
+            price: 39,
+          },
+          {
+            key: '24',
+            category: 'Electronics',
+            name: 'External Hard Drive',
+            description: 'High-capacity external hard drive for data storage.',
+            price: 79,
+          },
+          {
+            key: '25',
+            category: 'Clothing',
+            name: 'Women\'s Cardigan',
+            description: 'Stylish women\'s cardigan perfect for layering.',
+            price: 29,
+          },
+          {
+            key: '26',
+            category: 'Books',
+            name: 'Full-Stack Web Development',
+            description: 'A comprehensive guide to full-stack web development.',
+            price: 69,
+          },
+          {
+            key: '27',
+            category: 'Electronics',
+            name: 'USB Flash Drive',
+            description: 'Portable USB flash drive with high-speed data transfer.',
+            price: 9,
+          },
+          {
+            key: '28',
+            category: 'Clothing',
+            name: 'Men\'s Dress Shirt',
+            description: 'Formal men\'s dress shirt suitable for business attire.',
+            price: 49,
+          },
+          {
+            key: '29',
+            category: 'Books',
+            name: 'Machine Learning Basics',
+            description: 'Introduction to machine learning algorithms and techniques.',
+            price: 79,
+          },
+          {
+            key: '30',
+            category: 'Electronics',
+            name: 'Gaming Mouse',
+            description: 'High-performance gaming mouse with customizable buttons.',
+            price: 59,
+          },
+          {
+            key: '31',
+            category: 'Clothing',
+            name: 'Women\'s Jumpsuit',
+            description: 'Fashionable women\'s jumpsuit for a trendy look.',
+            price: 69,
+          },
+          {
+            key: '32',
+            category: 'Books',
+            name: 'Angular Development',
+            description: 'Learn to build web applications with Angular framework.',
+            price: 49,
+          },
+          {
+            key: '33',
+            category: 'Electronics',
+            name: 'Wireless Earbuds',
+            description: 'True wireless earbuds with long-lasting battery.',
+            price: 129,
+          },
+          {
+            key: '34',
+            category: 'Clothing',
+            name: 'Men\'s Suit',
+            description: 'Classic men\'s suit perfect for formal occasions.',
+            price: 299,
+          },
+          {
+            key: '35',
+            category: 'Books',
+            name: 'SQL Database Management',
+            description: 'A comprehensive guide to SQL database management.',
+            price: 59,
+          },
+          {
+            key: '36',
+            category: 'Electronics',
+            name: 'Smart Home Hub',
+            description: 'Central hub for controlling smart home devices.',
+            price: 149,
+          },
+          {
+            key: '37',
+            category: 'Clothing',
+            name: 'Women\'s Sweater',
+            description: 'Warm and cozy women\'s sweater for chilly days.',
+            price: 39,
+          },
+          {
+            key: '38',
+            category: 'Books',
+            name: 'Cybersecurity Basics',
+            description: 'Introduction to cybersecurity principles and practices.',
+            price: 49,
+          },
+          {
+            key: '39',
+            category: 'Electronics',
+            name: 'Smart Thermostat',
+            description: 'Programmable thermostat for energy-efficient heating and cooling.',
+            price: 129,
+          },
+          {
+            key: '40',
+            category: 'Clothing',
+            name: 'Men\'s Shorts',
+            description: 'Casual men\'s shorts perfect for summer wear.',
+            price: 19,
+          },
+          {
+            key: '41',
+            category: 'Books',
+            name: 'Data Analytics Fundamentals',
+            description: 'A beginner\'s guide to data analytics concepts and techniques.',
+            price: 59,
+          },
+          {
+            key: '42',
+            category: 'Electronics',
+            name: 'Security Camera',
+            description: 'Outdoor security camera with motion detection and night vision.',
+            price: 99,
+          },
+          {
+            key: '43',
+            category: 'Clothing',
+            name: 'Women\'s Tank Top',
+            description: 'Comfortable women\'s tank top for layering or active wear.',
+            price: 9,
+          },
+          {
+            key: '44',
+            category: 'Books',
+            name: 'Java Programming',
+            description: 'A comprehensive guide to Java programming language.',
+            price: 49,
+          },
+          {
+            key: '45',
+            category: 'Electronics',
+            name: 'Smart Plug',
+            description: 'Wi-Fi smart plug for remote control of electronic devices.',
+            price: 19,
+          },
+          {
+            key: '46',
+            category: 'Clothing',
+            name: 'Men\'s Sweatshirt',
+            description: 'Cozy men\'s sweatshirt with a soft fleece lining.',
+            price: 29,
+          },
+          {
+            key: '47',
+            category: 'Books',
+            name: 'DevOps Principles',
+            description: 'Introduction to DevOps principles and best practices.',
+            price: 39,
+          },
+          {
+            key: '48',
+            category: 'Electronics',
+            name: 'Wireless Router',
+            description: 'High-speed wireless router for home or office use.',
+            price: 79,
+          },
+          {
+            key: '49',
+            category: 'Clothing',
+            name: 'Women\'s Leggings',
+            description: 'Stretchy and comfortable women\'s leggings for active wear.',
+            price: 19,
+          },
+          {
+            key: '50',
+            category: 'Books',
+            name: 'Cloud Computing Basics',
+            description: 'Introduction to cloud computing concepts and technologies.',
+            price: 49,
+          },
+          
     ]);
 
-    // Function to add an item to the array
-    const addItem = (item) => {
-        setArray([...array, item]);
-    };
-
-    // Function to edit an item in the array
-    const editItem = (index, newItem) => {
-        const newArray = [...array];
-        newArray[index] = newItem;
-        setArray(newArray);
-    };
-
     return (
-        <ArrayContext.Provider value={{ array, addItem, editItem }}>
+        <ArrayContext.Provider value={{ products,setProducts }}>
             {children}
         </ArrayContext.Provider>
     );
