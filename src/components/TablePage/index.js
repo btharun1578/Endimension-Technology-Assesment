@@ -72,7 +72,7 @@ const TablePage = ({ searchCategory, searchDescription, searchName }) => {
             updatedProducts = updatedProducts.filter(product => product.name.toLowerCase().includes(searchName));
         }
         if (searchDescription.length > 0) {
-            updatedProducts = updatedProducts.filter(product => product.description.includes(searchDescription));
+            updatedProducts = updatedProducts.filter(product => product.description.toLowerCase().includes(searchDescription));
         }
         if (searchCategory?.length > 0) {
             updatedProducts = updatedProducts.filter(product => product.category === searchCategory);
